@@ -1,0 +1,71 @@
+.ReservationHero {
+    padding: 1em calc(50% - 25em);
+    width: 50em;
+    background-color: #495e57;
+}
+
+.ReservationHero, .ReservationHero div {
+    display: flex;
+    justify-content: center;
+}
+
+.ReservationHero div {
+    flex-direction: column;
+    width: 25em;
+    padding-right: 5em;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.ReservationHero h1 {
+    margin: 0;
+    padding: 0.5em 0;
+    color: var(--primary-yellow);
+}
+
+.ReservationHero img {
+    width: 25em;
+    height: 23em;
+    object-fit: cover;
+}
+
+.ReservationHero .BackButton {
+    width: 2em;
+    height: 2em;
+    font-size: 2em;
+    text-align: center;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    background-color: var(--secondary-white);
+    color: var(--secondary-black);
+    box-shadow: 0 4px 4px rgb(from var(--secondary-black) r g b / 0.25);
+    transition: 0.2s;
+}
+
+.ReservationHero .BackButton:active {
+    color: var(--secondary-white);
+    background-color: var(--primary-green);
+    box-shadow: 0 4px 4px rgb(from var(--secondary-black) r g b / 0.25) inset;
+    transition: 0.2s;
+}
+
+@media only screen and (max-width: 52em) {
+    .ReservationHero {
+        flex-wrap: wrap;
+        width: calc(100% - 2em);
+        height: auto;
+        padding: 2em 1em;
+        margin-bottom: auto;
+        justify-content: center;
+    }
+
+    .ReservationHero div {
+        padding-right: 0;
+    }
+
+    .ReservationHero img {
+        align-self: stretch;
+        width: 100%;
+    }
+}

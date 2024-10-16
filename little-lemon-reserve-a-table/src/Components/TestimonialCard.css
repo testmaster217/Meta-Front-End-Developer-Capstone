@@ -1,0 +1,29 @@
+.Review {
+    background-color: #EDEFEE;
+    padding: 0 1em;
+    margin: 0 1em;
+}
+
+.Review span, .Review p {
+    color: var(--secondary-black);
+}
+
+.Review section {
+    display: flex;
+    align-items: center;
+}
+
+.Review img {
+    width: 3em;
+    height: 3em;
+}
+
+.Review span {
+    display: block;
+}
+
+@media only screen and (max-width: 52em) {
+    .Review {
+        margin: 0 0.5em;
+    }
+}

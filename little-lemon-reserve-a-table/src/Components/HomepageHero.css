@@ -1,0 +1,66 @@
+.HomepageHero {
+    padding: 1em calc(50% - 25em);
+    height: 20em;
+    width: 50em;
+    background-color: #495e57;
+    margin-bottom: 3em;
+}
+
+.HomepageHero, .HomepageHero div {
+    display: flex;
+    justify-content: center;
+}
+
+.HomepageHero div {
+    flex-direction: column;
+    width: 25em;
+    padding-right: 5em;
+    padding-bottom: 3em;
+    align-items: flex-start;
+}
+
+.HomepageHero h1, .HomepageHero h2 {
+    margin: 0;
+}
+
+.HomepageHero h1 {
+    color: var(--primary-yellow);
+}
+
+.HomepageHero h2, .HomepageHero p {
+    color: var(--secondary-white);
+}
+
+.HomepageHero img {
+    width: 20em;
+    height: 23em;
+}
+
+.HomepageHero button {
+    height: 3em;
+    padding: 0 2em;
+}
+
+@media only screen and (max-width: 52em) {
+    .HomepageHero {
+        flex-wrap: wrap;
+        width: calc(100% - 2em);
+        height: auto;
+        padding: 2em 1em;
+        margin-bottom: auto;
+        justify-content: center;
+    }
+
+    .HomepageHero div {
+        padding-right: 0;
+        padding-bottom: 2em;
+    }
+
+    .HomepageHero img {
+        align-self: stretch;
+    }
+
+    .HomepageHero button {
+        margin: 0 auto;
+    }
+}

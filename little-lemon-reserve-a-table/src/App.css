@@ -1,38 +1,172 @@
-.App {
-  text-align: center;
+:root {
+    /* Color vars */
+    --primary-green: #495E57;
+    --primary-yellow: #F4CE14;
+    --secondary-pink: #EE9972;
+    --secondary-peach: #FBDABB;
+    --secondary-white: #EDEFEE;
+    --secondary-black: #333333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* For elements used only by screen readers */
+.SrOnly {
+    position: absolute;
+    left: -1000000000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Text style vars */
+.DisplayTitle {
+    font-family: 'Markazi Text', serif;
+    font-weight: 500;
+    font-size: 64px;
+    text-transform: capitalize;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Subtitle {
+    font-family: 'Markazi Text', serif;
+    font-weight: 400;
+    font-size: 40px;
 }
 
-.App-link {
-  color: #61dafb;
+.LeadText {
+    font-family: 'Karla', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.SectionTitle {
+    font-family: 'Karla', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.SectionCategory {
+    font-family: 'Karla', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+.CardTitle {
+    font-family: 'Karla', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+.ParagraphText {
+    font-family: 'Karla', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 65em;
+}
+
+.HighlightText {
+    color: var(--secondary-pink);
+    font-family: 'Karla', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--secondary-white);
+}
+
+img, .MainButton, .Card {
+    border-radius: 16px;
+}
+
+/* Failed attempt to style the <option>s in the <select>s */
+/* option {
+    background-color: var(--secondary-white);
+    color: var(--primary-green);
+}
+
+option:hover {
+    background-color: var(--primary-green);
+    color: var(--secondary-white);
+}
+
+option:not(:first-child) {
+    border-top: 2px dashed var(--primary-green);
+} */
+
+.MainButton {
+    background-color: var(--primary-yellow);
+    color: var(--secondary-black);
+    border: none;
+    box-shadow: 0 4px 4px rgb(from var(--secondary-black) r g b / 0.25);
+    transition: 0.2s;
+}
+.MainButton:active {
+    color: var(--secondary-white);
+    background-color: var(--primary-green);
+    box-shadow: 0 4px 4px rgb(from var(--secondary-black) r g b / 0.25) inset;
+    transition: 0.2s;
+}
+.MainButton:disabled {
+    background-color: var(--secondary-pink);
+    color: var(--secondary-black);
+    border: none;
+    box-shadow: 0 4px 4px rgb(from var(--secondary-black) r g b / 0.25);
+    transition: 0.2s;
+}
+
+.Card {
+    box-shadow: 0 4px 4px rgb(from var(--secondary-black) r g b / 0.25);
+}
+
+.FormField {
+    border-radius: 8px;
+    background-color: var(--secondary-white);
+    color: var(--secondary-black);
+    border: none;
+    box-shadow: 0 4px 4px rgb(from var(--primary-green) r g b / 0.25) inset,
+                0 -4px 4px rgb(from var(--primary-green) r g b / 0.25) inset;
+    height: 2em;
+    padding: 0 0.2em;
+}
+
+.FormDropDown {
+    border-radius: 8px;
+    background-color: var(--secondary-white);
+    color: var(--primary-green);
+    border: none;
+    box-shadow: 0 4px 4px rgb(from var(--primary-green) r g b / 0.25);
+    height: 2em;
+    padding: 0;
+}
+
+.FormField ~ p, .FormDropDown ~ p, textarea ~ p, input[type=radio] ~ p {
+    display: none;
+}
+
+.FormField:user-invalid, .FormDropDown:user-invalid, textarea:user-invalid, input[type=radio]:user-invalid {
+    background-color: var(--secondary-pink);
+}
+.FormField:user-invalid ~ p, .FormDropDown:user-invalid ~ p, textarea:user-invalid ~ p, input[type=radio]:user-invalid ~ p {
+    display: block;
+}
+
+.FormField:user-valid, .FormDropDown:user-valid, textarea:user-valid, input[type=radio]:user-valid {
+    background-color: var(--secondary-white);
+}
+.FormField:user-valid ~ p, .FormDropDown:user-valid ~ p, textarea:user-valid ~ p, input[type=radio]:user-valid ~ p {
+    display: none;
+}
+
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#root main {
+    flex-grow: 1;
 }

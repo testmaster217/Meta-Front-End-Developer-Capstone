@@ -1,0 +1,90 @@
+.ReserveForm {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    column-gap: 2em;
+    row-gap: 3em;
+    width: 50em;
+    padding: 2em calc(50% - 25em);
+}
+
+.ReserveForm label:not(:has(input[type="radio"])) {
+    grid-column: auto;
+    grid-row: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.ReserveForm label, .ReserveForm legend {
+    color: var(--primary-green);
+}
+
+.ReserveForm label span:not([aria-hidden]),
+.ReserveForm legend span:not([aria-hidden]) {
+    display: flex;
+}
+
+.ReserveForm textarea {
+    border-radius: 8px;
+    background-color: var(--secondary-white);
+    color: var(--secondary-black);
+    border: none;
+    box-shadow: 0 4px 4px rgb(from var(--primary-green) r g b / 0.25) inset,
+                0 -4px 4px rgb(from var(--primary-green) r g b / 0.25) inset;
+    height: 5em;
+    padding: 0 0.2em;
+}
+
+#seatingChoice {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+#seatingChoice label {
+    display: flex;
+    padding-block: 0.25em;
+}
+
+#seatingChoice input[type="radio"] {
+    /* appearance: none; */
+    padding: 0;
+    margin: 0 1em 0 0;
+    width: 2em;
+    height: 2em;
+    background-color: var(--secondary-white);
+    color: var(--primary-green);
+    border-color: var(--primary-green);
+    border: 2px solid;
+    border-radius: 50%;
+}
+/* #seatingChoice input[type="radio"]:checked {
+    width: 1em;
+    padding: 1em;
+} */
+
+.ReserveForm > button {
+    width: 12em;
+    height: 3em;
+    grid-column: 1/4;
+    margin: auto;
+}
+
+textarea:user-invalid, input[type=radio]:user-invalid {
+    background-color: var(--secondary-pink);
+}
+textarea:user-valid, input[type=radio]:user-valid {
+    background-color: var(--secondary-white);
+}
+
+@media only screen and (max-width: 52em) {
+    .ReserveForm {
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 2em);
+        padding: 2em 1em;
+    }
+}
